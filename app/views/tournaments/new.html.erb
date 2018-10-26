@@ -1,0 +1,26 @@
+<main class="container">
+
+<h1><%= link_to(@tournament.name,"/tournaments/#{@tournament.id}") %></h1>
+
+<div class="container p-0 mb-4">
+<h3>Add Participants</h3>
+
+<%= form_tag("/tournaments/#{@tournament.id}/create") do %>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" value="<%=  %>">
+  </div>
+<button type="submit" class="btn btn-primary">Submit</button>
+<% end %>
+</div>
+
+<div class="container p-0">
+<h3>Participants</h3>
+<ul>
+<% @tournament.participants.each do |participant| %>
+  <li><%= participant.name %></li>
+<% end %>
+</ul>
+</div>
+
+</main>

@@ -1,0 +1,2 @@
+module OtameshiHelper
+end

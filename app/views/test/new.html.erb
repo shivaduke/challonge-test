@@ -1,0 +1,30 @@
+<main class="container">
+
+<h1>New Tournament</h1>
+
+    <% @tournament.errors.full_messages.each do |message| %>
+        <div>
+        <%= message %>
+        </div>
+    <% end %>
+
+<%= form_tag('/test/create') do %>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" value="<%= @tournament.name %>">
+  </div>
+  <div class="form-group">
+    <label for="url">URL (ex: shivaduke_cup_21)</label>
+    <input type="text" class="form-control" id="url" name="url" value="<%= @tournament.url %>">
+  </div>
+  <div class="form-group">
+    <label for="tournament_type">Tournament Type</label>
+    <select class="form-control" id="tournament_type" name="tournament_type">
+      <option>single elimination</option>
+      <option>double elimination</option>
+      <option>round robin</option>
+    </select>
+  </div>  <button type="submit" class="btn btn-primary">Submit</button>
+<% end %>
+
+</main>

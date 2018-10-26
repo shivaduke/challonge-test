@@ -1,0 +1,19 @@
+<main class="container">
+<h1><%= link_to(@tournament.name,"/tournaments/#{@tournament.id}") %></h1>
+
+<h2>Match</h2>
+<%= form_tag("/tournaments/#{@tournament.id}/match/#{@match.id}/update") do %>
+  <div class="form-group">
+    <label for="score1"><%= @player[@match.player1_id] %></label>
+    <input type="tel" class="form-control" id="score1" name="score1" value="<%=  %>">
+  </div>
+
+  <div class="form-group">
+    <label for="score1"><%= @player[@match.player2_id] %></label>
+    <input type="tel" class="form-control" id="score1" name="score2" value="<%=  %>">
+  </div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+<% end %>
+
+</div>

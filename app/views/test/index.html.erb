@@ -1,0 +1,12 @@
+<main class="container">
+<h1>Test#index</h1>
+<p>Find me in app/views/test/index.html.erb</p>
+
+<div class="container">
+<ul>
+<% @challonge.each do |tournament| %>
+    <li><%= link_to(tournament.name,"/tournaments/#{tournament.id}") %> (<%= tournament.state %>)</li>
+<% end %>
+</ul>
+</div>
+</main>
